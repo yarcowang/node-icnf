@@ -1,0 +1,29 @@
+{
+  "name": "icnf",
+  "version": "0.0.1",
+  "description": "a nodejs module for supporting configeration",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+	"dependencies": {
+	},
+	"devDependencies": {
+		"mocha": "*",
+		"should": "*"
+	},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yarcowang/icnf"
+  },
+  "keywords": [
+    "simple",
+    "config",
+    "json"
+  ],
+  "author": {
+		"name": "Yarco",
+		"email": "yarco.wang@gmail.com"
+	},
+  "license": "BSD"
+}
