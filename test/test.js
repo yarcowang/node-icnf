@@ -12,3 +12,9 @@ describe('development env should using development.json', function() {
 	});
 });
 
+describe('test env should using test.json', function() {
+	it('should equal to shunza when test', function() {
+		icnf('test').gf.should.equal('shunza');
+	});
+});
+
