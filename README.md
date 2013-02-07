@@ -24,7 +24,7 @@ How to use
 <YOUR PROJECT>
 + etc/
   + production.json
-  + testing.json
+  + test.json
   + development.json
 ```
 
