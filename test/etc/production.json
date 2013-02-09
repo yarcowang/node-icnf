@@ -1,4 +1,17 @@
 {
+	"extend":"comm",
 	"name": "yarco",
-	"sex": "male"
+	"sex": "male",
+	"database": {
+		"host": "localhost",
+		"port": 1111,
+		"more": {
+			"name":"love",
+			"port":"77"
+		}
+	},
+	"keywords": [
+		"abc",
+		"efg"
+	]
 }

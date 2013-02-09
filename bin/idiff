@@ -1,0 +1,60 @@
+#!/usr/bin/env node
+
+// vim: set tabstop=2 shiftwidth=2 softtabstop=2 noexpandtab ai si: 
+var program = require('commander')
+	, path = require('path')
+	, fs = require('fs');
+
+program.version('0.0.3')
+	.usage('[options] <main>');
+
+program.on('--help', function() {
+	console.log('  Examples:\n' +
+		'    $ idiff production\n');
+});
+
+program.parse(process.argv);
+
+if (program.args.length != 1) {
+	console.log('see more help with --help');
+	process.exit(0);
+}
+
+// basic directory
+var dir = process.env.PWD;
+dir = path.join(dir, 'etc');
+
+// cache
+var cnfs = {};
+fs.readdirSync(dir).forEach(function(file) {
+	if (file.substr(-4) === 'json') {
+		var f = path.join(dir, file);
+		cnfs[f] = require(f);
+	}
+});
+
+var mainfile = path.join(dir, program.args[0] + '.json');
+var origin = cnfs[mainfile];
+
+for(var k in cnfs) {
+	if (k != mainfile) {
+		console.log('  checking ' + k);
+		idiff(origin, cnfs[k]);
+	}
+}
+
+function idiff(origin, target, prefix)
+{
+	if (typeof origin == 'object' && origin) {
+		for(var i in origin) {
+			var s = prefix ? prefix + '.' + i : i;
+			if (typeof target[i] == 'undefined') {
+				console.log('- ' + s);
+			} else if (typeof origin[i] != typeof target[i]) {
+				console.log('! ' + s);
+			} else if (typeof target[i] == 'object') {
+				idiff(origin[i], target[i], s);
+			}
+		}
+	}
+}

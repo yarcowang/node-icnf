@@ -1,5 +1,16 @@
 {
+	"extend":"comm",
 	"name":"yarco",
 	"sex":"male",
-	"gf":"shunza"
+	"gf":"shunza",
+	"database": {
+		"host": "localhost",
+		"more": {
+			"kk": "ok",
+			"port":77
+		}
+	},
+	"keywords": [
+		"abc"
+	]
 }

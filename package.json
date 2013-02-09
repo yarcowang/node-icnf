@@ -1,12 +1,16 @@
 {
   "name": "icnf",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "a nodejs module for supporting configeration",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
+	"bin": {
+		"icnfsync": "./bin/idiff"
+	},
 	"dependencies": {
+		"commander": "*"
 	},
 	"devDependencies": {
 		"mocha": "*",
