@@ -15,7 +15,7 @@ program.on('--help', function() {
 
 program.parse(process.argv);
 
-if (program.args.length != 1) {
+if (program.args.length > 1) {
 	console.log('see more help with --help');
 	process.exit(0);
 }
@@ -33,7 +33,12 @@ fs.readdirSync(dir).forEach(function(file) {
 	}
 });
 
-var mainfile = path.join(dir, program.args[0] + '.json');
+// default to production
+if (program.args.length < 1) {
+	mainfile = path.join(dir, (process.env.NODE_ENV || 'production') + '.json');
+} else {
+	mainfile = path.join(dir, program.args[0] + '.json');
+}
 var origin = cnfs[mainfile];
 
 for(var k in cnfs) {

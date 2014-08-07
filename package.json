@@ -1,7 +1,7 @@
 {
   "name": "icnf",
-  "version": "0.0.3",
-  "description": "a nodejs module for supporting configeration",
+  "version": "0.0.4",
+  "description": "a nodejs module for supporting simple configeration in json format",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
@@ -18,7 +18,7 @@
 	},
   "repository": {
     "type": "git",
-    "url": "git://github.com/yarcowang/icnf"
+    "url": "https://github.com/Yet-Another-Org/node-icnf"
   },
   "keywords": [
     "simple",
