@@ -77,9 +77,12 @@ Extra notice
 ------------
 * config file is `<PROJECT>/etc/<ENV>.json`
 * files in subdirectories under etc/ will be totally ignored when using _idiff_
+* You can use environment variable now (>= v0.0.5), just prefix with **$**, for example: `{ "NODE_ENV": "$NODE_ENV" }`. _$NODE_ENV_ will be expanded to its real value.
 
 ChangeLog
 ----------
+* 0.0.4 to 0.0.5
+	* add support for environment variables, the value prefix with '$' will be expanded. (that means _"KEY": "$VALUE"_ will be treated as _"KEY": process.env.VALUE_ )
 * 0.0.3 to 0.0.4
   * move repos from _yarcowang/icnf_ to _Yet-Another-Org/node-icnf_
   * change a bit README

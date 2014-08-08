@@ -10,6 +10,7 @@
 			"port":"77"
 		}
 	},
+	"env": "$FOO",
 	"keywords": [
 		"abc",
 		"efg"

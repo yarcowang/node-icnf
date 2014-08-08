@@ -5,7 +5,7 @@ var program = require('commander')
 	, path = require('path')
 	, fs = require('fs');
 
-program.version('0.0.3')
+program.version('0.0.5')
 	.usage('[options] <main>');
 
 program.on('--help', function() {
