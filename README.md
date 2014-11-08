@@ -1,14 +1,14 @@
 ICNF
 ========
-_icnf_ is a nodejs module for supporting simple configeration in json format.
+_icnf_ is a nodejs module for supporting simple configeration in json format (but powerfull).
 
 **License: GPL/BSD**
 
 Intro
 -----
-There already exists a module named _config_, but for me, it is too large -- i dont want supporting yml etc features, i just want a simple solution.
+There already exists a module named _config_, but for me, it is too large -- i dont want supporting yml etc features, i just want a simple solution but exactly have what i want.
 
-So that's why i create this module. And of cause choice is in yours.
+So that's why i do this module. And of cause choice is yours.
 
 How to install
 --------------
@@ -24,6 +24,9 @@ How to use
       + production.json
       + testing.json
       + development.json
+			comm/   -- this contains comm settings for all of the environments, but still configerable
+				+ comm.json
+				+ comm2.json
     ```
 
 2. use _icnf_ in your code
@@ -75,12 +78,16 @@ $ idiff development
 
 Extra notice
 ------------
-* config file is `<PROJECT>/etc/<ENV>.json`
+* config file is `<PROJECT>/etc/<ENV>.json`, the name of `etc` is fixed
+* the directory for comm part is `comm` (`<PROJECT>/etc/comm/<YOUR>.json`), is also fixed
 * files in subdirectories under etc/ will be totally ignored when using _idiff_
 * You can use environment variable now (>= v0.0.5), just prefix with **$**, for example: `{ "NODE_ENV": "$NODE_ENV" }`. _$NODE_ENV_ will be expanded to its real value.
 
 ChangeLog
 ----------
+* 0.0.5 to 0.0.6
+  * add supporting multi-confs in `extend` keyword, see example: test/etc/production.json , key extend 
+	* add key `extendEnvValue` in config if you want to disable checking environment variable
 * 0.0.4 to 0.0.5
 	* add support for environment variables, the value prefix with '$' will be expanded. (that means _"KEY": "$VALUE"_ will be treated as _"KEY": process.env.VALUE_ )
 * 0.0.3 to 0.0.4

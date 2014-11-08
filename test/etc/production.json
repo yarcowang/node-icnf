@@ -1,5 +1,5 @@
 {
-	"extend":"comm",
+	"extend":["comm", "prod-extra"],
 	"name": "yarco",
 	"sex": "male",
 	"database": {

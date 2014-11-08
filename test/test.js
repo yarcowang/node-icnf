@@ -27,4 +27,15 @@ describe('environment variable can be accessed', function() {
 	});
 });
 
+describe('development version can not access FOO', function() {
+	it('should have the original string `$FOO` because extendEnvValue is set to false', function() {
+		icnf('development').env.should.equal('$FOO');
+	});
+});
+
+describe('production version support multi-configs in `extend` field', function() {
+	it('should have host-prod defined in comm/prod-extra.json', function() {
+		icnf()['host-prod'].should.equal('this is from prod-extra');
+	});
+});
 

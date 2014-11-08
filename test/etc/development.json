@@ -1,5 +1,7 @@
 {
 	"extend":"comm",
+	"extendEnvValue": false,
+
 	"name":"yarco",
 	"sex":"male",
 	"gf":"shunza",
@@ -10,6 +12,7 @@
 			"port":77
 		}
 	},
+	"env": "$FOO",
 	"keywords": [
 		"abc"
 	]

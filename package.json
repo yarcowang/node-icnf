@@ -1,6 +1,6 @@
 {
   "name": "icnf",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "a nodejs module for supporting simple configeration in json format",
   "main": "index.js",
   "scripts": {
